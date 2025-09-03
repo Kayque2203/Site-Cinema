@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Poltronas - Cinema Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cinema Online</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Filmes</a></li>
+                <li><a href="#">Em Breve</a></li>
+                <li><a href="#">Promoções</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <button onclick="voltar()" class="btn-voltar">← Voltar</button>
+            
+            <section class="sessao-detalhes">
+                <div id="sessao-info" class="sessao-info">
+                    <!-- Informações da sessão serão carregadas aqui -->
+                </div>
+            </section>
+
+            <section class="cinema-layout">
+                <div class="tela">
+                    <div class="tela-texto">TELA</div>
+                </div>
+                
+                <div class="legenda">
+                    <div class="legenda-item">
+                        <div class="poltrona disponivel"></div>
+                        <span>Disponível</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="poltrona selecionada"></div>
+                        <span>Selecionada</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="poltrona ocupada"></div>
+                        <span>Ocupada</span>
+                    </div>
+                </div>
+
+                <div id="poltronas-container" class="poltronas-container">
+                    <!-- Poltronas serão geradas aqui via JavaScript -->
+                </div>
+            </section>
+
+            <section class="resumo-compra">
+                <div id="resumo-selecao">
+                    <p>Nenhuma poltrona selecionada</p>
+                </div>
+                
+                <button id="finalizar-btn" onclick="finalizarCompra()" class="btn-finalizar" style="display: none;">
+                    Finalizar Compra
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cinema Online. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Carregar poltronas quando a página carregar
+        document.addEventListener('DOMContentLoaded', carregarPoltronas);
+    </script>
+</body>
+</html>
+

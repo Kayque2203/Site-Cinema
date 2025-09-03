@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cinema Online</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Filmes</a></li>
+                <li><a href="#">Em Breve</a></li>
+                <li><a href="#">Promoções</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="filmes-em-destaque">
+            <h2>Filmes em Destaque</h2>
+            <div class="filme-list">
+                <div class="filme-card" data-filme="1">
+                    <img src="https://via.placeholder.com/200x300/FF6B6B/FFFFFF?text=Filme+1" alt="Filme 1">
+                    <h3>Vingadores: Ultimato</h3>
+                    <p>Ação, Aventura • 181 min</p>
+                    <button class="btn-selecionar" onclick="selecionarFilme(1, 'Vingadores: Ultimato')">Selecionar</button>
+                </div>
+                
+                <div class="filme-card" data-filme="2">
+                    <img src="https://via.placeholder.com/200x300/4ECDC4/FFFFFF?text=Filme+2" alt="Filme 2">
+                    <h3>Coringa</h3>
+                    <p>Drama, Crime • 122 min</p>
+                    <button class="btn-selecionar" onclick="selecionarFilme(2, 'Coringa')">Selecionar</button>
+                </div>
+                
+                <div class="filme-card" data-filme="3">
+                    <img src="https://via.placeholder.com/200x300/45B7D1/FFFFFF?text=Filme+3" alt="Filme 3">
+                    <h3>Parasita</h3>
+                    <p>Thriller, Drama • 132 min</p>
+                    <button class="btn-selecionar" onclick="selecionarFilme(3, 'Parasita')">Selecionar</button>
+                </div>
+                
+                <div class="filme-card" data-filme="4">
+                    <img src="https://via.placeholder.com/200x300/F7DC6F/FFFFFF?text=Filme+4" alt="Filme 4">
+                    <h3>1917</h3>
+                    <p>Guerra, Drama • 119 min</p>
+                    <button class="btn-selecionar" onclick="selecionarFilme(4, '1917')">Selecionar</button>
+                </div>
+                
+                <div class="filme-card" data-filme="5">
+                    <img src="https://via.placeholder.com/200x300/BB8FCE/FFFFFF?text=Filme+5" alt="Filme 5">
+                    <h3>Toy Story 4</h3>
+                    <p>Animação, Família • 100 min</p>
+                    <button class="btn-selecionar" onclick="selecionarFilme(5, 'Toy Story 4')">Selecionar</button>
+                </div>
+                
+                <div class="filme-card" data-filme="6">
+                    <img src="https://via.placeholder.com/200x300/85C1E9/FFFFFF?text=Filme+6" alt="Filme 6">
+                    <h3>Frozen 2</h3>
+                    <p>Animação, Musical • 103 min</p>
+                    <button class="btn-selecionar" onclick="selecionarFilme(6, 'Frozen 2')">Selecionar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cinema Online. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

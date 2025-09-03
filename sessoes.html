@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessões - Cinema Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cinema Online</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Filmes</a></li>
+                <li><a href="#">Em Breve</a></li>
+                <li><a href="#">Promoções</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <button onclick="voltar()" class="btn-voltar">← Voltar</button>
+            
+            <section class="filme-selecionado">
+                <h2 id="filme-nome">Carregando...</h2>
+                <p>Selecione a sala e horário desejados:</p>
+            </section>
+
+            <section id="sessoes-container">
+                <!-- Sessões serão carregadas aqui via JavaScript -->
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cinema Online. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Carregar sessões quando a página carregar
+        document.addEventListener('DOMContentLoaded', carregarSessoes);
+    </script>
+</body>
+</html>
+
