@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMax - Sua experiência cinematográfica</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <h1>AtticoMax</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#" class="active">Filmes</a></li>
+                    <li><a href="#">Em Breve</a></li>
+                    <li><a href="#">Promoções</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Viva a magia do cinema</h2>
+                    <p>Escolha seu filme, sua poltrona e desfrute da melhor experiência cinematográfica</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="filmes-em-destaque" class="movies-section">
+            <div class="container">
+                <h2 class="section-title">Filmes em Cartaz</h2>
+                <div class="movies-grid">
+                    <div class="movie-card" data-filme="1">
+                        <div class="movie-poster">
+                            <img src="images/vingadores_ultimato.png" alt="Vingadores: Ultimato">
+                            <div class="movie-overlay">
+                                <button class="btn-select" onclick="selecionarFilme(1, 'Vingadores: Ultimato')">
+                                    <i class="fas fa-play"></i>
+                                    Selecionar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Vingadores: Ultimato</h3>
+                            <div class="movie-details">
+                                <span class="genre">Ação, Aventura</span>
+                                <span class="duration">181 min</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>9.2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card" data-filme="2">
+                        <div class="movie-poster">
+                            <img src="images/coringa.png" alt="Coringa">
+                            <div class="movie-overlay">
+                                <button class="btn-select" onclick="selecionarFilme(2, 'Coringa')">
+                                    <i class="fas fa-play"></i>
+                                    Selecionar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Coringa</h3>
+                            <div class="movie-details">
+                                <span class="genre">Drama, Crime</span>
+                                <span class="duration">122 min</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>8.4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card" data-filme="3">
+                        <div class="movie-poster">
+                            <img src="images/parasita.png" alt="Parasita">
+                            <div class="movie-overlay">
+                                <button class="btn-select" onclick="selecionarFilme(3, 'Parasita')">
+                                    <i class="fas fa-play"></i>
+                                    Selecionar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Parasita</h3>
+                            <div class="movie-details">
+                                <span class="genre">Thriller, Drama</span>
+                                <span class="duration">132 min</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>8.6</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card" data-filme="4">
+                        <div class="movie-poster">
+                            <img src="images/1917.png" alt="1917">
+                            <div class="movie-overlay">
+                                <button class="btn-select" onclick="selecionarFilme(4, '1917')">
+                                    <i class="fas fa-play"></i>
+                                    Selecionar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>1917</h3>
+                            <div class="movie-details">
+                                <span class="genre">Guerra, Drama</span>
+                                <span class="duration">119 min</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>8.3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card" data-filme="5">
+                        <div class="movie-poster">
+                            <img src="images/toy_story_4.png" alt="Toy Story 4">
+                            <div class="movie-overlay">
+                                <button class="btn-select" onclick="selecionarFilme(5, 'Toy Story 4')">
+                                    <i class="fas fa-play"></i>
+                                    Selecionar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Toy Story 4</h3>
+                            <div class="movie-details">
+                                <span class="genre">Animação, Família</span>
+                                <span class="duration">100 min</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>7.7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card" data-filme="6">
+                        <div class="movie-poster">
+                            <img src="images/frozen_2.png" alt="Frozen 2">
+                            <div class="movie-overlay">
+                                <button class="btn-select" onclick="selecionarFilme(6, 'Frozen 2')">
+                                    <i class="fas fa-play"></i>
+                                    Selecionar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>Frozen 2</h3>
+                            <div class="movie-details">
+                                <span class="genre">Animação, Musical</span>
+                                <span class="duration">103 min</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>6.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-film"></i>
+                        <h3>CineMax</h3>
+                    </div>
+                    <p>A melhor experiência cinematográfica da cidade</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Filmes</a></li>
+                        <li><a href="#">Promoções</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> contato@cinemax.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CineMax. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

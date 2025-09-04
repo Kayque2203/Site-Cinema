@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMax - Seleção de Sessões</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <h1>CineMax</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Filmes</a></li>
+                    <li><a href="#">Em Breve</a></li>
+                    <li><a href="#">Promoções</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="sessions-section">
+            <div class="container">
+                <button onclick="voltar()" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar</button>
+                
+                <div class="movie-session-info">
+                    <h2 id="filme-nome">Carregando...</h2>
+                    <p>Selecione a sala e horário desejados:</p>
+                </div>
+
+                <div id="sessoes-container" class="sessions-grid">
+                    <!-- Sessões serão carregadas aqui via JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-film"></i>
+                        <h3>CineMax</h3>
+                    </div>
+                    <p>A melhor experiência cinematográfica da cidade</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Filmes</a></li>
+                        <li><a href="#">Promoções</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> contato@cinemax.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CineMax. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", carregarSessoes);
+    </script>
+</body>
+</html>
+
