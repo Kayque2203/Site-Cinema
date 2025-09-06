@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtticoMax - Seleção de Poltronas</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/seats.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/system_messages.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <h1>AtticoMax</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Filmes</a></li>
+                    <li><a href="em-breve.html">Em Breve</a></li>
+                    <li><a href="promocoes.html">Promoções</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="seats-selection-section">
+            <div class="container">
+                <button onclick="voltar()" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar</button>
+                
+                <div class="movie-session-info summary-info" id="sessao-info">
+                    <!-- Informações da sessão serão carregadas aqui -->
+                </div>
+
+                <div class="cinema-screen">
+                    <div class="screen-text">TELA</div>
+                </div>
+                
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="seat available"></div>
+                        <span>Disponível</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat selected"></div>
+                        <span>Selecionada</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat occupied"></div>
+                        <span>Ocupada</span>
+                    </div>
+                </div>
+
+                <div id="poltronas-container" class="seats-grid">
+                    <!-- Poltronas serão geradas aqui via JavaScript -->
+                </div>
+            </section>
+
+            <section class="purchase-summary">
+                <div id="resumo-selecao" class="summary-details">
+                    <p>Nenhuma poltrona selecionada</p>
+                </div>
+                
+                <button id="finalizar-btn" onclick="finalizarCompra()" class="btn-finish-purchase" style="display: none;">
+                    <i class="fas fa-ticket-alt"></i> Finalizar Compra
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-film"></i>
+                        <h3>AtticoMax</h3>
+                    </div>
+                    <p>A melhor experiência cinematográfica da cidade</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Filmes</a></li>
+                        <li><a href="#">Promoções</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> contato@atticomax.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AtticoMax. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", carregarPoltronas);
+    </script>
+</body>
+</html>
+
