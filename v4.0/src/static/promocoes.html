@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtticoMax - Promoções</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .promotions-section {
+            padding: 120px 0 80px;
+            background: #0c0c0c;
+            color: #fff;
+        }
+        
+        .promotion-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .promotion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+        
+        .promotion-title {
+            font-size: 1.8rem;
+            color: #ff6b35;
+            margin-bottom: 15px;
+        }
+        
+        .promotion-description {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .promotion-details {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <h1>AtticoMax</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Filmes</a></li>
+                    <li><a href="em-breve.html">Em Breve</a></li>
+                    <li><a href="promocoes.html" class="active">Promoções</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="promotions-section">
+            <div class="container">
+                <h2 class="section-title">Promoções Especiais</h2>
+                
+                <div class="promotion-card">
+                    <h3 class="promotion-title">
+                        <i class="fas fa-ticket-alt"></i>
+                        Meia-Entrada Estudante
+                    </h3>
+                    <p class="promotion-description">
+                        Estudantes pagam apenas metade do preço em todos os filmes, todos os dias da semana!
+                    </p>
+                    <div class="promotion-details">
+                        <strong>Condições:</strong> Apresentar carteirinha de estudante válida na bilheteria.
+                    </div>
+                </div>
+
+                <div class="promotion-card">
+                    <h3 class="promotion-title">
+                        <i class="fas fa-heart"></i>
+                        Terça do Casal
+                    </h3>
+                    <p class="promotion-description">
+                        Às terças-feiras, casais pagam apenas R$ 40,00 pelos dois ingressos!
+                    </p>
+                    <div class="promotion-details">
+                        <strong>Válido:</strong> Todas as terças-feiras, exceto feriados. Limitado a 2 ingressos por compra.
+                    </div>
+                </div>
+
+                <div class="promotion-card">
+                    <h3 class="promotion-title">
+                        <i class="fas fa-birthday-cake"></i>
+                        Aniversariante do Mês
+                    </h3>
+                    <p class="promotion-description">
+                        Quem faz aniversário no mês ganha desconto de 50% no ingresso!
+                    </p>
+                    <div class="promotion-details">
+                        <strong>Como usar:</strong> Apresente documento de identidade na bilheteria durante o mês do seu aniversário.
+                    </div>
+                </div>
+
+                <div class="promotion-card">
+                    <h3 class="promotion-title">
+                        <i class="fas fa-users"></i>
+                        Grupo de Amigos
+                    </h3>
+                    <p class="promotion-description">
+                        Grupos de 4 ou mais pessoas ganham 20% de desconto no total da compra!
+                    </p>
+                    <div class="promotion-details">
+                        <strong>Condições:</strong> Mínimo de 4 ingressos na mesma sessão. Válido de segunda a quinta-feira.
+                    </div>
+                </div>
+
+                <div class="promotion-card">
+                    <h3 class="promotion-title">
+                        <i class="fas fa-clock"></i>
+                        Matinê Especial
+                    </h3>
+                    <p class="promotion-description">
+                        Sessões até às 16h com preço promocional de apenas R$ 15,00!
+                    </p>
+                    <div class="promotion-details">
+                        <strong>Horários:</strong> Sessões das 14h00 e 16h00, de segunda a sexta-feira.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-film"></i>
+                        <h3>AtticoMax</h3>
+                    </div>
+                    <p>A melhor experiência cinematográfica da cidade</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Filmes</a></li>
+                        <li><a href="em-breve.html">Em Breve</a></li>
+                        <li><a href="promocoes.html">Promoções</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> contato@atticomax.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AtticoMax. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

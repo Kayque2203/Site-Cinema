@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - AtticoMax</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .auth-container {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .auth-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .auth-card h2 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            flex: 1;
+            text-align: left;
+        }
+
+        .form-group.full-width {
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #e74c3c;
+        }
+
+        .checkbox-group {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .checkbox-group h4 {
+            margin-bottom: 1rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .btn-auth {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 1rem;
+        }
+
+        .btn-auth:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-auth:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .auth-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .auth-links a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .auth-links a:hover {
+            color: #c0392b;
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #c62828;
+        }
+
+        .success-message {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2e7d32;
+        }
+
+        .loading {
+            display: none;
+            margin-left: 0.5rem;
+        }
+
+        .loading.show {
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .auth-card {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <h1><a href="index.html" style="color: inherit; text-decoration: none;">AtticoMax</a></h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Filmes</a></li>
+                    <li><a href="em-breve.html">Em Breve</a></li>
+                    <li><a href="promocoes.html">Promoções</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Entrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2><i class="fas fa-user-plus"></i> Criar Conta</h2>
+                
+                <div id="message-container"></div>
+                
+                <form id="register-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="username">Nome de Usuário *</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="nome_completo">Nome Completo *</label>
+                        <input type="text" id="nome_completo" name="nome_completo" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Senha *</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_password">Confirmar Senha *</label>
+                            <input type="password" id="confirm_password" name="confirm_password" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone">
+                        </div>
+                        <div class="form-group">
+                            <label for="data_nascimento">Data de Nascimento</label>
+                            <input type="date" id="data_nascimento" name="data_nascimento">
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <h4>Gêneros Preferidos (opcional)</h4>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="acao" name="generos" value="Ação">
+                                <label for="acao">Ação</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="aventura" name="generos" value="Aventura">
+                                <label for="aventura">Aventura</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="comedia" name="generos" value="Comédia">
+                                <label for="comedia">Comédia</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="drama" name="generos" value="Drama">
+                                <label for="drama">Drama</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="terror" name="generos" value="Terror">
+                                <label for="terror">Terror</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="romance" name="generos" value="Romance">
+                                <label for="romance">Romance</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ficcao" name="generos" value="Ficção Científica">
+                                <label for="ficcao">Ficção Científica</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="animacao" name="generos" value="Animação">
+                                <label for="animacao">Animação</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="thriller" name="generos" value="Thriller">
+                                <label for="thriller">Thriller</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="crime" name="generos" value="Crime">
+                                <label for="crime">Crime</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-auth" id="register-btn">
+                        Criar Conta
+                        <i class="fas fa-spinner fa-spin loading" id="loading"></i>
+                    </button>
+                </form>
+                
+                <div class="auth-links">
+                    <p>Já tem uma conta? <a href="login.html">Entre aqui</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-film"></i>
+                        <h3>AtticoMax</h3>
+                    </div>
+                    <p>A melhor experiência cinematográfica da cidade</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Filmes</a></li>
+                        <li><a href="promocoes.html">Promoções</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> contato@atticomax.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AtticoMax. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,183 @@
+/* ========================================= */
+/*          6. Seção de Poltronas            */
+/* ========================================= */
+
+.seats-selection-section {
+    padding: 120px 0 80px;
+    background: #0c0c0c;
+    color: #fff;
+}
+
+.summary-info {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.summary-info strong {
+    color: #ff6b35;
+}
+
+.cinema-screen {
+    background: #333;
+    width: 80%;
+    max-width: 600px;
+    height: 50px;
+    margin: 0 auto 50px;
+    border-radius: 50% / 100% 100% 0 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.screen-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #eee;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ccc;
+}
+
+.legend-item .seat {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #555;
+}
+
+.legend-item .seat.available {
+    background-color: #4CAF50; /* Verde */
+}
+
+.legend-item .seat.selected {
+    background-color: #ff6b35; /* Laranja */
+}
+
+.legend-item .seat.occupied {
+    background-color: #888; /* Cinza */
+}
+
+.seats-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.seat-row {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.row-letter {
+    font-weight: 600;
+    color: #ff6b35;
+    width: 30px;
+    text-align: center;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background-color: #4CAF50; /* Disponível */
+    border: 1px solid #388E3C;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.seat:hover:not(.occupied) {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.seat.selected {
+    background-color: #ff6b35; /* Selecionada */
+    border-color: #e65100;
+    box-shadow: 0 0 15px rgba(255, 107, 53, 0.7);
+}
+
+.seat.occupied {
+    background-color: #888; /* Ocupada */
+    border-color: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.purchase-summary {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.summary-details {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.summary-details h3 {
+    font-size: 1.8rem;
+    color: #ff6b35;
+    margin-bottom: 15px;
+}
+
+.summary-details p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.summary-details strong {
+    color: #ff6b35;
+}
+
+.btn-finish-purchase {
+    background: linear-gradient(45deg, #ff6b35, #f7931e);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-finish-purchase:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+}
+
+

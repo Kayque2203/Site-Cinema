@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - AtticoMax</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .profile-container {
+            min-height: 80vh;
+            padding: 2rem 1rem;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 3rem;
+        }
+
+        .profile-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        .profile-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #e74c3c;
+        }
+
+        .checkbox-group h4 {
+            margin-bottom: 1rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+        }
+
+        .compra-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .compra-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .compra-filme {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .compra-status {
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .status-ativo {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-usado {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .status-cancelado {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .compra-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .compra-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+        }
+
+        .compra-poltronas {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .poltronas-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .poltrona-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .btn-cancel {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-cancel:hover {
+            background: #c82333;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #c62828;
+        }
+
+        .success-message {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2e7d32;
+        }
+
+        .loading {
+            display: none;
+            margin-left: 0.5rem;
+        }
+
+        .loading.show {
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .profile-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .profile-card {
+                padding: 1.5rem;
+            }
+
+            .compra-details {
+                grid-template-columns: 1fr;
+            }
+
+            .compra-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <h1><a href="index.html" style="color: inherit; text-decoration: none;">AtticoMax</a></h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Filmes</a></li>
+                    <li><a href="em-breve.html">Em Breve</a></li>
+                    <li><a href="promocoes.html">Promoções</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="#" id="user-menu">Minha Conta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h2 id="user-name">Carregando...</h2>
+                    <p id="user-email">Carregando...</p>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-card">
+                        <h3><i class="fas fa-user-edit"></i> Dados Pessoais</h3>
+                        
+                        <div id="profile-message-container"></div>
+                        
+                        <form id="profile-form">
+                            <div class="form-group">
+                                <label for="nome_completo">Nome Completo</label>
+                                <input type="text" id="nome_completo" name="nome_completo" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="data_nascimento">Data de Nascimento</label>
+                                <input type="date" id="data_nascimento" name="data_nascimento">
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <h4>Gêneros Preferidos</h4>
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="acao" name="generos" value="Ação">
+                                        <label for="acao">Ação</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="aventura" name="generos" value="Aventura">
+                                        <label for="aventura">Aventura</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="comedia" name="generos" value="Comédia">
+                                        <label for="comedia">Comédia</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="drama" name="generos" value="Drama">
+                                        <label for="drama">Drama</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="terror" name="generos" value="Terror">
+                                        <label for="terror">Terror</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="romance" name="generos" value="Romance">
+                                        <label for="romance">Romance</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="ficcao" name="generos" value="Ficção Científica">
+                                        <label for="ficcao">Ficção Científica</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="animacao" name="generos" value="Animação">
+                                        <label for="animacao">Animação</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="thriller" name="generos" value="Thriller">
+                                        <label for="thriller">Thriller</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="crime" name="generos" value="Crime">
+                                        <label for="crime">Crime</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary" id="update-profile-btn">
+                                Atualizar Perfil
+                                <i class="fas fa-spinner fa-spin loading" id="profile-loading"></i>
+                            </button>
+                            <button type="button" class="btn-secondary" id="change-password-btn">
+                                Alterar Senha
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="profile-card">
+                        <h3><i class="fas fa-ticket-alt"></i> Histórico de Compras</h3>
+                        
+                        <div id="compras-container">
+                            <div class="empty-state">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Carregando histórico...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-film"></i>
+                        <h3>AtticoMax</h3>
+                    </div>
+                    <p>A melhor experiência cinematográfica da cidade</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Filmes</a></li>
+                        <li><a href="promocoes.html">Promoções</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> contato@atticomax.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AtticoMax. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para alterar senha -->
+    <div id="password-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 2rem; border-radius: 15px; width: 90%; max-width: 400px;">
+            <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">Alterar Senha</h3>
+            
+            <div id="password-message-container"></div>
+            
+            <form id="password-form">
+                <div class="form-group">
+                    <label for="current_password">Senha Atual</label>
+                    <input type="password" id="current_password" name="current_password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="new_password">Nova Senha</label>
+                    <input type="password" id="new_password" name="new_password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm_new_password">Confirmar Nova Senha</label>
+                    <input type="password" id="confirm_new_password" name="confirm_new_password" required>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="submit" class="btn-primary" id="save-password-btn">
+                        Salvar
+                        <i class="fas fa-spinner fa-spin loading" id="password-loading"></i>
+                    </button>
+                    <button type="button" class="btn-secondary" id="cancel-password-btn">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
+
